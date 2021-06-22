@@ -27,7 +27,6 @@ class MyWordAdapter(w: ArrayList<Word>) : BaseAdapter() {
 
         val view: View = convertView ?: View.inflate(parent?.context, R.layout.my_word_list_view_item, null)
 
-
         val word = getItem(position)
         view.findViewById<TextView>(R.id.word).text = word.value
         view.findViewById<TextView>(R.id.spell).text = word.spell
