@@ -43,7 +43,7 @@ class SubjectAdapter : BaseAdapter {
         val viewHolder: com.xfs.flashcard.adapter.SubjectAdapter.ViewHolder
         if (convertView == null) {
             val inflater =
-                context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                context?.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(layout, null)
             viewHolder = com.xfs.flashcard.adapter.SubjectAdapter.ViewHolder()
             viewHolder.nameSubj = convertView.findViewById<View>(R.id.nameSubj) as TextView
