@@ -14,7 +14,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                app:title="Flashcard"
+                android:id="@+id/toolbar"
+                android:layout_height="?attr/actionBarSize">
+            </androidx.appcompat.widget.Toolbar>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -22,17 +27,12 @@
                 android:orientation="vertical">
 
                 <ListView
-                    android:id="@+id/listSubj"
+                    android:id="@+id/list"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
 
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                app:title="Flashcard"
-                android:id="@+id/toolbar"
-                android:layout_height="?attr/actionBarSize">
-            </androidx.appcompat.widget.Toolbar>
+
         </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView
@@ -42,14 +42,9 @@
         android:fitsSystemWindows="true"
         android:id="@+id/navigationview">
         <ListView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:id="@+id/lvAbout"/>
-        <ListView
             android:id="@+id/lvHomepage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="150dp"/>
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.navigation.NavigationView>
     </androidx.drawerlayout.widget.DrawerLayout>
