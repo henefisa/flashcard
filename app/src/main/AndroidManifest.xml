@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activities.Flashcard"></activity>
         <activity android:name=".activities.AboutActivity"></activity>
         <activity android:name=".activities.HomepageActivity">
             <intent-filter>
