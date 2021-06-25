@@ -1,9 +1,7 @@
 package com.xfs.flashcard.activities
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
@@ -22,7 +20,6 @@ import com.xfs.flashcard.models.Menu
 import com.xfs.flashcard.models.Subject
 import java.util.*
 
-
 class HomepageActivity : AppCompatActivity() {
     private lateinit var database : FirebaseFirestore
     var toolbar: Toolbar? = null
@@ -31,7 +28,6 @@ class HomepageActivity : AppCompatActivity() {
 
     lateinit var listSubj: ListView
     lateinit var lvHomepage: ListView
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -88,6 +84,7 @@ class HomepageActivity : AppCompatActivity() {
         toolbar?.setNavigationIcon(R.drawable.ic_menu)
         toolbar?.setNavigationOnClickListener { drawerLayout!!.openDrawer(GravityCompat.START) }
     }
+
     fun getData(){
         database.collection("Subjects").get().addOnCompleteListener( object :
             OnCompleteListener<QuerySnapshot> {
