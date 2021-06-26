@@ -56,6 +56,10 @@ class HomepageActivity : AppCompatActivity() {
         MenuArrayList.add(Menu("Learn", R.drawable.ic_round_work_24))
         MenuArrayList.add(Menu("About us", R.drawable.ic_round_work_24))
         getData()
+        listSubj.onItemClickListener = OnItemClickListener() { parent, view, position, id ->
+            val intent = Intent(this, Flashcard::class.java)
+            startActivity(intent)
+        }
 //        val adapterSubj = SubjectAdapter(subjectArrayList)
 //        listSubj.adapter = adapterSubj
         val adapterMenu = MenuAdapter(MenuArrayList)
@@ -86,13 +90,19 @@ class HomepageActivity : AppCompatActivity() {
     }
 
     fun getData(){
-        database.collection("Subjects").get().addOnCompleteListener( object :
+        database.collection("Subjects").get().addOnCompleteListener(object :
             OnCompleteListener<QuerySnapshot> {
-            override fun onComplete(p0 : Task<QuerySnapshot>){
-                var list=ArrayList<Subject>()
+            override fun onComplete(p0: Task<QuerySnapshot>) {
+                var list = ArrayList<Subject>()
                 if (p0.isSuccessful) {
-                    for(data in p0.result!!){
-                        list.add(Subject(data.id,data.get("name") as String,data.get("cover") as String))
+                    for (data in p0.result!!) {
+                        list.add(
+                            Subject(
+                                data.id,
+                                data.get("name") as String,
+                                data.get("cover") as String
+                            )
+                        )
                     }
                     var adapter = SubjectAdapter(list)
                     listSubj.adapter = adapter
