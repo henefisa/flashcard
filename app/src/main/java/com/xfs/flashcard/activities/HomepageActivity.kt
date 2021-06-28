@@ -86,27 +86,29 @@ class HomepageActivity : AppCompatActivity() {
         toolbar?.setNavigationOnClickListener { drawerLayout!!.openDrawer(GravityCompat.START) }
     }
 
-    fun getData(){
-        database.collection("Subjects").get().addOnCompleteListener(object :
-                OnCompleteListener<QuerySnapshot> {
-            override fun onComplete(p0: Task<QuerySnapshot>) {
-                var list = ArrayList<Subject>()
-                if (p0.isSuccessful) {
-                    for (data in p0.result!!) {
-                        list.add(
-                                Subject(
-                                        data.id,
-                                        data.get("name") as String,
-                                        data.get("cover") as String
-                                )
+    fun getData() {
+        database.collection("Subjects").get().addOnCompleteListener { p0 ->
+            var list = ArrayList<Subject>()
+            if (p0.isSuccessful) {
+                for (data in p0.result!!) {
+                    list.add(
+                        Subject(
+                            data.id,
+                            data.get("name") as String,
+                            data.get("cover") as String
                         )
-                    }
-                    var adapter = SubjectAdapter(list)
-                    listSubj.adapter = adapter
-
+                    )
+                }
+                var adapter = SubjectAdapter(list)
+                listSubj.adapter = adapter
+                listSubj.onItemClickListener = OnItemClickListener() { parent, view, position, id ->
+                    val intent = Intent(this, Flashcard::class.java)
+                    val subject = adapter.getItem(position)
+                    intent.putExtra("subjectId", subject.id)
+                    startActivity(intent)
                 }
             }
-        })
+        }
     }
 
 }

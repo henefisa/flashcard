@@ -14,10 +14,10 @@ class MyWordActivity : AppCompatActivity() {
     lateinit var myWordListView: ListView
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState)
+        super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.my_word_list_view)
         val sampleWords = ArrayList<Word>()
-        val word = Word("123123", "Sample", "Sample", "Sample", arrayListOf("123123"))
+        val word = Word("123123", "Sample", "Sample", "Sample", "Sample", "123123")
         sampleWords.add(word)
         sampleWords.add(word)
         sampleWords.add(word)
