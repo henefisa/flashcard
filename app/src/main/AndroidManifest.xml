@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -12,8 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activities.Flashcard"></activity>
-        <activity android:name=".activities.AboutActivity"></activity>
+        <activity android:name=".activities.completeLesson"></activity>
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".activities.Flashcard" />
+        <activity android:name=".activities.MyWordActivity" />
+        <activity android:name=".activities.AboutActivity" />
         <activity android:name=".activities.HomepageActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

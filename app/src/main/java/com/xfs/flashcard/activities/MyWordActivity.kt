@@ -14,7 +14,7 @@ class MyWordActivity : AppCompatActivity() {
     lateinit var myWordListView: ListView
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.my_word_list_view)
         val sampleWords = ArrayList<Word>()
         val word = Word("123123", "Sample", "Sample", "Sample", arrayListOf("123123"))

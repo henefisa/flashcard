@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activities.Flashcard">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="success"
-        android:textSize="30dp"
-        android:id="@+id/textview"
-        android:paddingLeft="10dp"
+
+    <Button
+        android:id="@+id/btnBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="btn"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

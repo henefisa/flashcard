@@ -32,36 +32,25 @@ class HomepageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
-        var subj = Subject(
-            "1",
-            "fruit",
-            "https://dictionary.cambridge.org/vi/images/thumb/fruit_noun_002_15105.jpg?version=5.0.176"
-        )
-
-//        val subjectArrayList = ArrayList<Subject>()
-//        subjectArrayList.add(subj)
-//        subjectArrayList.add(subj)
-//        subjectArrayList.add(subj)
-//        subjectArrayList.add(subj)
-//        subjectArrayList.add(subj)
-
         database = FirebaseFirestore.getInstance()
         toolbar = findViewById(R.id.toolbar)
         listSubj = findViewById<ListView>(R.id.list)
         lvHomepage = findViewById<ListView>(R.id.lvHomepage)
-//        lvAbout = findViewById<ListView>(R.id.lvAbout)
         navigationView = findViewById(R.id.navigationview)
         drawerLayout = findViewById(R.id.drawerlayout)
         val MenuArrayList = ArrayList<Menu>()
-        MenuArrayList.add(Menu("Learn", R.drawable.ic_round_work_24))
-        MenuArrayList.add(Menu("About us", R.drawable.ic_round_work_24))
+        MenuArrayList.add(Menu("Learn", R.drawable.learn))
+        MenuArrayList.add(Menu("My words", R.drawable.ic_round_work_24))
+        MenuArrayList.add(Menu("Setting", R.drawable.ic_round_settings_24))
+        MenuArrayList.add(Menu("About us", R.drawable.ic_info))
         getData()
         listSubj.onItemClickListener = OnItemClickListener() { parent, view, position, id ->
+//            var idSubj = id
+//            if(idSubj == listSubj[])
             val intent = Intent(this, Flashcard::class.java)
             startActivity(intent)
         }
-//        val adapterSubj = SubjectAdapter(subjectArrayList)
-//        listSubj.adapter = adapterSubj
+
         val adapterMenu = MenuAdapter(MenuArrayList)
         lvHomepage.adapter = adapterMenu
 
@@ -72,8 +61,16 @@ class HomepageActivity : AppCompatActivity() {
                 startActivity(intent)
             }
             else if(position === 1){
-            val intent = Intent(this, AboutActivity::class.java)
-            startActivity(intent)
+                val intent = Intent(this, MyWordActivity::class.java)
+                startActivity(intent)
+            }
+            else if(position === 2){
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
+            else if(position === 3){
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
             }
         }
         actionBar()
@@ -91,17 +88,17 @@ class HomepageActivity : AppCompatActivity() {
 
     fun getData(){
         database.collection("Subjects").get().addOnCompleteListener(object :
-            OnCompleteListener<QuerySnapshot> {
+                OnCompleteListener<QuerySnapshot> {
             override fun onComplete(p0: Task<QuerySnapshot>) {
                 var list = ArrayList<Subject>()
                 if (p0.isSuccessful) {
                     for (data in p0.result!!) {
                         list.add(
-                            Subject(
-                                data.id,
-                                data.get("name") as String,
-                                data.get("cover") as String
-                            )
+                                Subject(
+                                        data.id,
+                                        data.get("name") as String,
+                                        data.get("cover") as String
+                                )
                         )
                     }
                     var adapter = SubjectAdapter(list)

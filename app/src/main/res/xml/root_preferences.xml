@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory app:title="General">
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/mode"
+            app:entryValues="@array/mode"
+            app:key="mode"
+            app:title="Mode"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Notification">
+
+        <SwitchPreferenceCompat
+            app:key="practice_reminder"
+            app:title="Practice reminder"
+            />
+        <ListPreference
+            app:defaultValue="reply"
+            app:entries="@array/time_remider"
+            app:entryValues="@array/time_remider"
+            app:key="time_reminder"
+            app:title="Time reminder"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Subscription">
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
