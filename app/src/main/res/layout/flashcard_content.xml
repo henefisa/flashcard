@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#B2B6BA">
-
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,7 +25,8 @@
                     android:gravity="center"
                     android:text="Word"
                     android:textColor="#CC0A0A"
-                    android:textSize="30dp"></TextView>
+                    android:id="@+id/word"
+                    android:textSize="30dp"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -41,27 +41,44 @@
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:background="@drawable/voi"
+                android:id="@+id/text_to_speech_btn"
                 android:gravity="center">
 
             </ImageView>
         </LinearLayout>
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="5">
+            android:layout_weight="5"
+            android:id="@+id/flashcard_front_back"
+            android:clickable="true"
+        >
+            <LinearLayout android:id="@+id/flashcard_front" android:layout_width="match_parent"
+                          android:layout_height="match_parent">
+                <ImageView android:layout_width="match_parent"
+                           android:id="@+id/word_image"
+                           android:layout_height="match_parent" app:layout_constraintBottom_toBottomOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"/>
+            </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/flashcard_back"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="40dp"
                 android:background="@drawable/bdlayout"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/flashcard_front_back"
+                app:layout_constraintEnd_toStartOf="@+id/flashcard_front_back"
+                app:layout_constraintStart_toEndOf="@+id/flashcard_front_back"
+                app:layout_constraintTop_toBottomOf="@+id/flashcard_front_back">
 
                 <TextView
-
+                    android:id="@+id/mean"
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="60dp"
                     android:paddingTop="10dp"
                     android:text="handleAbc"
                     android:textAlignment="center"
@@ -71,6 +88,7 @@
                 </TextView>
 
                 <TextView
+                    android:id="@+id/spell"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
@@ -80,17 +98,24 @@
 
                 </TextView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="15dp"
-                    android:text="handleAbc"
-                    android:textColor="#000"
-                    android:textSize="26dp">
+                <ListView android:id="@+id/example" android:layout_width="match_parent" android:layout_height="0dp"
+                          android:layout_weight="1"/>
 
-                </TextView>
 
             </LinearLayout>
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
-</LinearLayout>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/close"
+        android:gravity="center"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+
+    >
+
+    </ImageView>
+</RelativeLayout>
