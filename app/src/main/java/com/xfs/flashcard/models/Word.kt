@@ -5,6 +5,7 @@ data class Word(
     val value: String,
     val mean: String,
     val spell: String,
+    val image: String,
     val examples: List<String>
 ) {
 
