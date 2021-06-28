@@ -53,6 +53,8 @@ class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolde
             holder.mean.text = words[position].mean
             holder.spell.text = words[position].spell
             Picasso.get().load(words[position].image).placeholder(R.drawable.icon_img).into(holder.image)
+            val exampleAdapter = WordExamplesAdapter(words[position].examples)
+            holder.examples.adapter = exampleAdapter
         }
     }
 
