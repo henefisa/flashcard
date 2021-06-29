@@ -40,7 +40,7 @@ class Flashcard : AppCompatActivity() {
                         data["mean"] as String,
                         data["spell"] as String,
                         data["image"] as String,
-                        data["examples"] as ArrayList<String>
+                        data["examples"] as String
                     )
                     words.add(word)
                 }

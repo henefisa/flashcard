@@ -17,5 +17,5 @@ class FlashcardHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val front: LinearLayout = itemView.findViewById(R.id.flashcard_front)
     val back: LinearLayout = itemView.findViewById(R.id.flashcard_back)
     val image: ImageView = itemView.findViewById(R.id.word_image)
-    val examples: ListView = itemView.findViewById(R.id.word_example_list)
+    val examples: TextView = itemView.findViewById(R.id.word_example_list)
 }

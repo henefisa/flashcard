@@ -29,8 +29,18 @@ class HomepageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
-
-
+        database = FirebaseFirestore.getInstance()
+        toolbar = findViewById(R.id.toolbar)
+        listSubj = findViewById<ListView>(R.id.list)
+        lvHomepage = findViewById<ListView>(R.id.lvHomepage)
+        navigationView = findViewById(R.id.navigationview)
+        drawerLayout = findViewById(R.id.drawerlayout)
+        val MenuArrayList = ArrayList<Menu>()
+        MenuArrayList.add(Menu("Learn", R.drawable.learn))
+        MenuArrayList.add(Menu("My words", R.drawable.ic_round_work_24))
+        MenuArrayList.add(Menu("Setting", R.drawable.ic_round_settings_24))
+        MenuArrayList.add(Menu("About us", R.drawable.ic_info))
+        getData()
         database = FirebaseFirestore.getInstance()
         toolbar = findViewById(R.id.toolbar)
         listSubj = findViewById(R.id.list)
@@ -38,12 +48,7 @@ class HomepageActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.navigationview)
         drawerLayout = findViewById(R.id.drawerlayout)
 
-        val menusList = ArrayList<Menu>()
-        menusList.add(Menu("Learn", R.drawable.ic_round_work_24))
-        menusList.add(Menu("About us", R.drawable.ic_round_work_24))
-        getData()
-
-        val adapterMenu = MenuAdapter(menusList)
+        val adapterMenu = MenuAdapter(MenuArrayList)
         lvHomepage.adapter = adapterMenu
 
         lvHomepage.onItemClickListener = OnItemClickListener() { _, _, position, _ ->
@@ -51,7 +56,16 @@ class HomepageActivity : AppCompatActivity() {
             if (position === 0) {
                 val intent = Intent(this, HomepageActivity::class.java)
                 startActivity(intent)
-            } else if (position === 1) {
+            }
+            else if(position === 1){
+                val intent = Intent(this, MyWordActivity::class.java)
+                startActivity(intent)
+            }
+            else if(position === 2){
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
+            else if(position === 3){
                 val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
             }

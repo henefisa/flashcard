@@ -31,7 +31,7 @@ class MyWordAdapter(w: ArrayList<Word>) : BaseAdapter() {
         view.findViewById<TextView>(R.id.word).text = word.value
         view.findViewById<TextView>(R.id.spell).text = word.spell
         view.findViewById<TextView>(R.id.mean).text = word.mean
-        view.findViewById<TextView>(R.id.example).text = word.examples[0]
+        view.findViewById<TextView>(R.id.example).text = word.examples
 
         return view
 
