@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:id="@+id/my_words_item"
-              android:padding="10dp"
->
-    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                  android:orientation="horizontal" android:layout_weight="1">
-        <TextView android:layout_width="0dp" android:layout_height="match_parent"
-                  android:layout_weight="1"
-                  android:gravity="center_vertical"
-                  android:id="@+id/word"
-                  android:text="Word"/>
-        <TextView android:layout_width="0dp" android:layout_weight="1" android:id="@+id/spell"
-                  android:layout_marginLeft="10dp" android:layout_height="match_parent"
-                  android:text="Sample" android:gravity="center_vertical"/>
-        <ImageView android:layout_width="50dp" android:layout_height="50dp" android:layout_gravity="center_vertical"
-                   android:layout_marginLeft="10dp"
-        />
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E4E4E4"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_words_item"
+        android:padding="10dp"
+        android:background="#FFFF"
+        android:layout_margin="10dp"
+        >
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_weight="1">
+            <TextView android:layout_width="0dp" android:layout_height="match_parent"
+                android:layout_weight="0.7"
+                android:gravity="center_vertical"
+                android:id="@+id/word"
+                android:textSize="20dp"
+                android:textColor="#8AE2AA"
+                android:text="Word"/>
+            <TextView android:layout_width="0dp" android:layout_weight="1" android:id="@+id/spell"
+                android:layout_marginLeft="10dp" android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:textColor="#992970"
+                android:text="Sample" android:gravity="center_vertical"/>
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/voi"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+        <TextView android:layout_width="match_parent" android:id="@+id/mean" android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:textSize="20dp"
+            android:text="Meaning"/>
+        <TextView android:layout_width="match_parent" android:id="@+id/example" android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:text="Example"/>
     </LinearLayout>
-    <TextView android:layout_width="match_parent" android:id="@+id/mean" android:gravity="center_vertical"
-              android:layout_weight="1"
-              android:layout_height="wrap_content"
-              android:text="Meaning"/>
-    <TextView android:layout_width="match_parent" android:id="@+id/example" android:gravity="center_vertical"
-              android:layout_weight="1"
-              android:layout_height="wrap_content"
-              android:text="Example"/>
+
 </LinearLayout>

@@ -61,5 +61,4 @@ class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolde
     override fun getItemCount(): Int {
         return words.size
     }
-
 }

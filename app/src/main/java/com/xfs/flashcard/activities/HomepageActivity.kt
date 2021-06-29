@@ -8,11 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.google.android.gms.tasks.OnCompleteListener
-import com.google.android.gms.tasks.Task
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.QuerySnapshot
 import com.xfs.flashcard.R
 import com.xfs.flashcard.adapter.MenuAdapter
 import com.xfs.flashcard.adapter.SubjectAdapter
@@ -21,7 +18,7 @@ import com.xfs.flashcard.models.Subject
 import java.util.*
 
 class HomepageActivity : AppCompatActivity() {
-    private lateinit var database : FirebaseFirestore
+    private lateinit var database: FirebaseFirestore
     var toolbar: Toolbar? = null
     var navigationView: NavigationView? = null
     var drawerLayout: DrawerLayout? = null
@@ -44,19 +41,19 @@ class HomepageActivity : AppCompatActivity() {
         MenuArrayList.add(Menu("Setting", R.drawable.ic_round_settings_24))
         MenuArrayList.add(Menu("About us", R.drawable.ic_info))
         getData()
-        listSubj.onItemClickListener = OnItemClickListener() { parent, view, position, id ->
-//            var idSubj = id
-//            if(idSubj == listSubj[])
-            val intent = Intent(this, Flashcard::class.java)
-            startActivity(intent)
-        }
+        database = FirebaseFirestore.getInstance()
+        toolbar = findViewById(R.id.toolbar)
+        listSubj = findViewById(R.id.list)
+        lvHomepage = findViewById(R.id.lvHomepage)
+        navigationView = findViewById(R.id.navigationview)
+        drawerLayout = findViewById(R.id.drawerlayout)
 
         val adapterMenu = MenuAdapter(MenuArrayList)
         lvHomepage.adapter = adapterMenu
 
-        lvHomepage.onItemClickListener =  OnItemClickListener() { _, _, position, _ ->
+        lvHomepage.onItemClickListener = OnItemClickListener() { _, _, position, _ ->
             val menu = adapterMenu.getItem(position)
-            if(position === 0){
+            if (position === 0) {
                 val intent = Intent(this, HomepageActivity::class.java)
                 startActivity(intent)
             }
