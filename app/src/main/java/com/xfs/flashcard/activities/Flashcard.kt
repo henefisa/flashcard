@@ -1,12 +1,9 @@
 package com.xfs.flashcard.activities
 
-import android.animation.AnimatorInflater
-import android.animation.AnimatorSet
+import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.LinearLayout
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.*
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -18,13 +15,19 @@ class Flashcard : AppCompatActivity() {
     private val db = Firebase.firestore
     private lateinit var recyclerView: RecyclerView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_flashcard)
         val subjectId = intent.extras?.get("subjectId")
         recyclerView = findViewById(R.id.recycler_flashcard_view)
         getData(subjectId as String)
+
+        val closeBtn: ImageButton = findViewById(R.id.closeBtn)
+        closeBtn.setOnClickListener {
+            val intent = Intent(this, HomepageActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 
