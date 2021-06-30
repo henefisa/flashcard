@@ -1,10 +1,7 @@
 package com.xfs.flashcard.holders
 
 import android.view.View
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.xfs.flashcard.R
@@ -18,4 +15,5 @@ class FlashcardHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val back: LinearLayout = itemView.findViewById(R.id.flashcard_back)
     val image: ImageView = itemView.findViewById(R.id.word_image)
     val examples: ListView = itemView.findViewById(R.id.word_example_list)
+    val addToMyWord: Button = itemView.findViewById(R.id.add_to_my_word)
 }

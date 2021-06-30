@@ -41,6 +41,7 @@ class HomepageActivity : AppCompatActivity() {
         val menusList = ArrayList<Menu>()
         menusList.add(Menu("Learn", R.drawable.ic_round_work_24))
         menusList.add(Menu("About us", R.drawable.ic_round_work_24))
+        menusList.add(Menu("My words", R.drawable.ic_round_work_24))
         getData()
 
         val adapterMenu = MenuAdapter(menusList)
@@ -51,9 +52,15 @@ class HomepageActivity : AppCompatActivity() {
             if (position === 0) {
                 val intent = Intent(this, HomepageActivity::class.java)
                 startActivity(intent)
+                finish()
             } else if (position === 1) {
                 val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
+                finish()
+            } else if (position === 2) {
+                val intent = Intent(this, MyWordActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
         actionBar()
@@ -89,6 +96,7 @@ class HomepageActivity : AppCompatActivity() {
                     val subject = adapter.getItem(position)
                     intent.putExtra("subjectId", subject.id)
                     startActivity(intent)
+                    finish()
                 }
             }
         }
