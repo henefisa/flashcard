@@ -1,0 +1,11 @@
+<resources>
+    <string-array name="mode">
+        <item>Dark</item>
+        <item>Light</item>
+    </string-array>
+    <string-array name="time_remider">
+        <item>15min</item>
+        <item>30min</item>
+    </string-array>
+
+</resources>
