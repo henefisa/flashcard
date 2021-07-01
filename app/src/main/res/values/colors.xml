@@ -11,4 +11,9 @@
     <color name="window">#E9ECF0</color>
     <color name="correct_answer_background_disabled">#F5F0FBFA</color>
     <color name="screen_title">#B8000000</color>
+    <color name="Limegreen">#32CD32</color>
+    <color name="red">#FF0000</color>
+    <color name="mintCream">#F5FFFA</color>
+    <color name="green">#008000</color>
+    <color name="MediumSlateBlue">#7B68EE</color>
 </resources>

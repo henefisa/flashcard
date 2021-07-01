@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activities.completeLesson"></activity>
+        <activity android:name=".activities.ResultQuizActivity"/>
+        <activity android:name=".activities.QuizActivity"/>
+        <activity android:name=".activities.CompleteLesson"/>
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" />
