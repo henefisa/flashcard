@@ -92,9 +92,11 @@ class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolde
                             )
                         )
                     } else {
+                        val al = ArrayList<String>()
+                        al.add(words[position].id)
                         ref.set(
                             mapOf(
-                                "words" to ArrayList<String>().add(words[position].id)
+                                "words" to al
                             )
                         )
                     }
