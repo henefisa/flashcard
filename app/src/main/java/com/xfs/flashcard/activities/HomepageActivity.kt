@@ -53,22 +53,25 @@ class HomepageActivity : AppCompatActivity() {
 
         lvHomepage.onItemClickListener = OnItemClickListener() { _, _, position, _ ->
             val menu = adapterMenu.getItem(position)
-            if (position === 0) {
-                val intent = Intent(this, HomepageActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else if (position === 1) {
-                val intent = Intent(this, MyWordActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else if (position === 2) {
-                val intent = Intent(this, SettingsActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else if (position === 3) {
-                val intent = Intent(this, AboutActivity::class.java)
-                startActivity(intent)
-                finish()
+            when {
+                position === 0 -> {
+                    val intent = Intent(this, HomepageActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                position === 1 -> {
+                    val intent = Intent(this, MyWordActivity::class.java)
+                    startActivity(intent)
+                }
+                position === 2 -> {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    startActivity(intent)
+                }
+                position === 3 -> {
+                    val intent = Intent(this, AboutActivity::class.java)
+                    startActivity(intent)
+
+                }
             }
         }
         actionBar()

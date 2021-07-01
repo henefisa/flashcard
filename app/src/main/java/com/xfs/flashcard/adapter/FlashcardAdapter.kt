@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
@@ -97,6 +98,7 @@ class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolde
                             )
                         )
                     }
+                    Toast.makeText(context, "Words added to my words!", Toast.LENGTH_SHORT).show()
                 }
             }
 
