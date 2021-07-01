@@ -100,9 +100,9 @@
                 </TextView>
 
                 <ListView android:id="@+id/word_example_list" android:layout_width="match_parent"
-                          android:layout_height="0dp"
-                          android:layout_weight="1"
-                          android:clickable="false"
+                          android:layout_height="wrap_content"
+
+
                 />
 
 

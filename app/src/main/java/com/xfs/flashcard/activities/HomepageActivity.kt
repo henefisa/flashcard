@@ -48,13 +48,6 @@ class HomepageActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.navigationview)
         drawerLayout = findViewById(R.id.drawerlayout)
 
-        val menusList = ArrayList<Menu>()
-        menusList.add(Menu("Learn", R.drawable.ic_round_work_24))
-        menusList.add(Menu("About us", R.drawable.ic_round_work_24))
-        menusList.add(Menu("My words", R.drawable.ic_round_work_24))
-        getData()
-
-        val adapterMenu = MenuAdapter(menusList)
         val adapterMenu = MenuAdapter(MenuArrayList)
         lvHomepage.adapter = adapterMenu
 
@@ -65,20 +58,18 @@ class HomepageActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             } else if (position === 1) {
-            }
-            else if(position === 1){
                 val intent = Intent(this, MyWordActivity::class.java)
                 startActivity(intent)
-            }
-            else if(position === 2){
+                finish()
+            } else if (position === 2) {
                 val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)
-            }
-            else if(position === 3){
+                finish()
+            } else if (position === 3) {
                 val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
                 finish()
-            } 
+            }
         }
         actionBar()
     }
