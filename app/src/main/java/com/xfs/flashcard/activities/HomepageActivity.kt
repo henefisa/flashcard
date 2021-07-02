@@ -36,12 +36,13 @@ class HomepageActivity : AppCompatActivity() {
         navigationView = findViewById(R.id.navigationview)
         drawerLayout = findViewById(R.id.drawerlayout)
         val MenuArrayList = ArrayList<Menu>()
-        MenuArrayList.add(Menu("Learn", R.drawable.learn))
+        MenuArrayList.add(Menu("Home", R.drawable.ic_home))
         MenuArrayList.add(Menu("My words", R.drawable.ic_round_work_24))
+        MenuArrayList.add(Menu("Quiz", R.drawable.learn))
         MenuArrayList.add(Menu("Setting", R.drawable.ic_round_settings_24))
         MenuArrayList.add(Menu("About us", R.drawable.ic_info))
         getData()
-        database = FirebaseFirestore.getInstance()
+
         toolbar = findViewById(R.id.toolbar)
         listSubj = findViewById(R.id.list)
         lvHomepage = findViewById(R.id.lvHomepage)
@@ -64,10 +65,14 @@ class HomepageActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 position === 2 -> {
-                    val intent = Intent(this, SettingsActivity::class.java)
+                    val intent = Intent(this, QuizActivity::class.java)
                     startActivity(intent)
                 }
                 position === 3 -> {
+                    val intent = Intent(this, SettingsActivity::class.java)
+                    startActivity(intent)
+                }
+                position === 4 -> {
                     val intent = Intent(this, AboutActivity::class.java)
                     startActivity(intent)
 

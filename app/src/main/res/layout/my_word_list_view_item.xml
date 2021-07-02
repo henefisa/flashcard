@@ -50,7 +50,8 @@
                       android:textSize="20dp"
                       android:layout_height="wrap_content"
                       android:text="Example"/>
-            <ImageButton android:layout_width="30dp" android:layout_height="30dp" android:id="@+id/delete_btn" android:background="@drawable/close"/>
+            <ImageButton android:layout_width="30dp" android:layout_height="30dp" android:id="@+id/delete_btn"
+                         android:background="@drawable/close"/>
         </LinearLayout>
 
     </LinearLayout>
