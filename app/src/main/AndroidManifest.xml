@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.xfs.flashcard">
+    package="com.xfs.flashcard">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,9 +16,7 @@
         <activity android:name=".activities.ResultQuizActivity"/>
         <activity android:name=".activities.QuizActivity"/>
         <activity android:name=".activities.CompleteLesson"/>
-        <activity
-            android:name=".activities.SettingsActivity"
-            android:label="@string/title_activity_settings" />
+        <activity android:name=".activities.SettingsActivity" />
         <activity android:name=".activities.Flashcard" />
         <activity android:name=".activities.MyWordActivity" />
         <activity android:name=".activities.AboutActivity" />

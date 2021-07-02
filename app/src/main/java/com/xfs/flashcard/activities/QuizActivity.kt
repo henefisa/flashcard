@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -28,15 +27,14 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
         database = FirebaseFirestore.getInstance()
-        val que1 = Question("1","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
-        "orange","banana","mango","grape",1)
-        val que2 = Question("2","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
+
+        val que1 = Question("2","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
             "mango","banana","orange","grape",3)
-        val que3 = Question("3","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
+        val que2 = Question("3","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
             "banana","orange","mango","grape",2)
-//        questionList.add(que1)
+        questionList.add(que1)
         questionList.add(que2)
-        questionList.add(que3)
+
         getQuestion()
 
         setQuiz()
