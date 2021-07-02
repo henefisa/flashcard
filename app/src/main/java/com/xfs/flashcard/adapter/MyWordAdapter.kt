@@ -1,15 +1,21 @@
 package com.xfs.flashcard.adapter
 
+import android.provider.Settings
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageButton
+import android.widget.LinearLayout
 import android.widget.TextView
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import com.xfs.flashcard.R
 import com.xfs.flashcard.models.Word
 
 class MyWordAdapter(w: ArrayList<Word>) : BaseAdapter() {
     private val words: ArrayList<Word> = w
-
+    private val db = Firebase.firestore
 
     override fun getCount(): Int {
         return words.size
@@ -32,7 +38,18 @@ class MyWordAdapter(w: ArrayList<Word>) : BaseAdapter() {
         view.findViewById<TextView>(R.id.spell).text = word.spell
         view.findViewById<TextView>(R.id.mean).text = word.mean
         view.findViewById<TextView>(R.id.example).text = word.examples[0]
-
+        view.findViewById<ImageButton>(R.id.delete_btn).setOnClickListener {
+            val id: String = Settings.Secure.getString(parent?.context?.contentResolver, Settings.Secure.ANDROID_ID)
+            db.collection("Favorites").document(id).update("words", FieldValue.arrayRemove(word.id))
+                .addOnSuccessListener {
+                    words.remove(word)
+                    this.notifyDataSetChanged()
+                }
+            if (words.size === 0) {
+                val emptyLayout: LinearLayout? = parent?.findViewById(R.id.empty_layout)
+                emptyLayout?.visibility = View.VISIBLE
+            }
+        }
         return view
 
     }
