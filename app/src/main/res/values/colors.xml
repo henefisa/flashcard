@@ -15,5 +15,6 @@
     <color name="red">#FF0000</color>
     <color name="mintCream">#F5FFFA</color>
     <color name="green">#008000</color>
-    <color name="MediumSlateBlue">#7B68EE</color>
+    <color name="MediumSlateBlue">#4792ED</color>
+    <color name="black">#363A43</color>
 </resources>

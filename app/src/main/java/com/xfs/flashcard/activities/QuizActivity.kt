@@ -30,10 +30,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
 
         val que1 = Question("2","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
             "mango","banana","orange","grape",3)
-        val que2 = Question("3","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
-            "banana","orange","mango","grape",2)
         questionList.add(que1)
-        questionList.add(que2)
 
         getQuestion()
 
@@ -142,7 +139,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         }
 
         progressBar.progress = currentPosition
-        tv_progress.text="$currentPosition" + "/" + progressBar.max
+        var maxProgressBar = questionList.size
+        tv_progress.text="$currentPosition" + "/" + maxProgressBar
         tv_question.text = question.question
         Picasso.get().load(question.img).placeholder(R.drawable.icon_img).into(findViewById<ImageView>(R.id.iv_image))
         tv_optionOne.text = question.optionOne

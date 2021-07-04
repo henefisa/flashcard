@@ -3,7 +3,6 @@
     package="com.xfs.flashcard">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
@@ -12,7 +11,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme">
+        <receiver android:name=".activities.MyBroadcastReceiver" />
         <activity android:name=".activities.ResultQuizActivity"/>
         <activity android:name=".activities.QuizActivity"/>
         <activity android:name=".activities.CompleteLesson"/>

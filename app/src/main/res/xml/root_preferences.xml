@@ -9,24 +9,33 @@
             app:title="Mode"
             app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
-
     <PreferenceCategory app:title="Notification">
-
         <SwitchPreferenceCompat
             app:key="practice_reminder"
-            app:title="Practice reminder"
-            />
+            app:title="Practice reminder" />
         <ListPreference
             app:defaultValue="reply"
-            app:entries="@array/time_remider"
-            app:entryValues="@array/time_remider"
-            app:key="time_reminder"
-            app:title="Time reminder"
+            app:entries="@array/break_time"
+            app:entryValues="@array/break_time"
+            app:key="break_time"
+            app:title="Break time"
             app:useSimpleSummaryProvider="true" />
+        <com.xfs.flashcard.preference.TimePickerPreference
+            android:key="time_reminder"
+            android:title="Time reminder"
+            android:summary="This will show notification time."
+            android:defaultValue="90" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="Subscription">
-
+        <PreferenceScreen
+            android:key="pref_Term_and_Condition"
+            android:title="Terms and conditions"
+            />
+        <PreferenceScreen
+            android:key="pref_Policy"
+            android:title="Privacy Policy"
+            />
     </PreferenceCategory>
 
 </PreferenceScreen>
