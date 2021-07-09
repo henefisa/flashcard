@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
         android:background="#FFFFFF"
         android:orientation="vertical">
 
@@ -24,12 +23,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
-                android:background="@drawable/bdlayout"
+
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
+                    android:background="@drawable/bdlayout"
                     android:layout_weight="3">
 
                     <TextView
@@ -45,7 +45,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
-                    android:layout_weight="7"
+                    android:layout_weight="4"
                     android:orientation="vertical"
                     android:paddingTop="30dp"
                     android:paddingBottom="30dp">
@@ -75,15 +75,15 @@
                         <Button
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="25dp"
-                            android:layout_marginBottom="25dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="25dp"
                             android:layout_marginRight="15dp"
+                            android:layout_marginBottom="25dp"
                             android:layout_weight="1"
                             android:background="@drawable/borderbutton"
-                            android:text="B.HandleB"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
+                            android:text="B.HandleB"
                             android:textSize="18dp">
 
                         </Button>
@@ -114,14 +114,14 @@
                         <Button
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
-                            android:layout_marginTop="25dp"
-                            android:layout_marginBottom="25dp"
                             android:layout_marginLeft="10dp"
+                            android:layout_marginTop="25dp"
                             android:layout_marginRight="15dp"
+                            android:layout_marginBottom="25dp"
                             android:layout_weight="1"
+                            android:background="@drawable/borderbutton"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
-                            android:background="@drawable/borderbutton"
                             android:text="D.HandleD"
                             android:textSize="18dp">
 
@@ -134,11 +134,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="10dp"
+
             android:layout_marginTop="0dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="20dp"
-            android:layout_weight="2"
+            android:layout_weight="1.4"
+            android:background="@drawable/background_ex"
             android:orientation="horizontal">
 
 
@@ -151,22 +150,25 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
-                    android:layout_marginRight="10dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/il">
 
                 </LinearLayout>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
-            </LinearLayout>
+
+                android:layout_weight="1"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1">
-            </LinearLayout>
+                android:layout_weight="1"></LinearLayout>
+
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -175,9 +177,10 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_marginLeft="10dp"
                     android:layout_height="80dp"
                     android:layout_gravity="right"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/ir">
 
                 </LinearLayout>
