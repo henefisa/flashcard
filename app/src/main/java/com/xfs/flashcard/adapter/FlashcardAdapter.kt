@@ -2,16 +2,14 @@ package com.xfs.flashcard.adapter
 
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
+import android.app.Activity
 import android.content.Context
-import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
-import android.widget.ImageView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
@@ -20,9 +18,12 @@ import com.squareup.picasso.Picasso
 import com.xfs.flashcard.R
 import com.xfs.flashcard.holders.FlashcardHolder
 import com.xfs.flashcard.models.Word
+import com.xfs.flashcard.utils.TTS
 
-class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolder>() {
+class FlashcardAdapter(w: ArrayList<Word>, a: Activity) : RecyclerView.Adapter<FlashcardHolder>() {
+
     private val words = w
+    private val activity = a
     val db = Firebase.firestore
     private lateinit var front_anim: AnimatorSet
     private lateinit var back_anim: AnimatorSet
@@ -84,7 +85,9 @@ class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolde
             Picasso.get().load(words[position].image).placeholder(R.drawable.icon_img).into(holder.image)
             val exampleAdapter = WordExamplesAdapter(words[position].examples)
             holder.examples.adapter = exampleAdapter
-
+            holder.speak.setOnClickListener {
+                TTS(activity, words[position].value)
+            }
             holder.addToMyWord.setOnClickListener {
                 val ref = db.collection("Favorites").document(id)
                 ref.get().addOnSuccessListener() { docs ->
@@ -127,7 +130,6 @@ class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolde
 //            Toast.makeText(this@FlashcardAdapter, "You clicked on ImageView.", Toast.LENGTH_SHORT).show()
 //        }
 //    }
-
 
 
 }
