@@ -1,5 +1,6 @@
 package com.xfs.flashcard.adapter
 
+import android.app.Activity
 import android.provider.Settings
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +13,11 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.xfs.flashcard.R
 import com.xfs.flashcard.models.Word
+import com.xfs.flashcard.utils.TTS
 
-class MyWordAdapter(w: ArrayList<Word>) : BaseAdapter() {
+class MyWordAdapter(w: ArrayList<Word>, a: Activity) : BaseAdapter() {
     private val words: ArrayList<Word> = w
+    private val activity = a
     private val db = Firebase.firestore
 
     override fun getCount(): Int {
@@ -49,6 +52,9 @@ class MyWordAdapter(w: ArrayList<Word>) : BaseAdapter() {
                 val emptyLayout: LinearLayout? = parent?.findViewById(R.id.empty_layout)
                 emptyLayout?.visibility = View.VISIBLE
             }
+        }
+        view.findViewById<ImageButton>(R.id.speak).setOnClickListener {
+            TTS(activity, word.value)
         }
         return view
 

@@ -51,7 +51,7 @@ class Flashcard : AppCompatActivity() {
 
             val helper = PagerSnapHelper();
             helper.attachToRecyclerView(recyclerView)
-            val adapter = FlashcardAdapter(words)
+            val adapter = FlashcardAdapter(words, this)
             recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
             recyclerView.setHasFixedSize(true)
             recyclerView.itemAnimator = DefaultItemAnimator()

@@ -16,4 +16,7 @@ class FlashcardHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val image: ImageView = itemView.findViewById(R.id.word_image)
     val examples: ListView = itemView.findViewById(R.id.word_example_list)
     val addToMyWord: Button = itemView.findViewById(R.id.add_to_my_word)
+    val speak: ImageButton = itemView.findViewById(R.id.text_to_speech_btn)
+
+
 }

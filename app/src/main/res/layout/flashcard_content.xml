@@ -36,7 +36,7 @@
             android:gravity="center"
             android:layout_weight="1">
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/text_to_speech_btn"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
@@ -44,7 +44,7 @@
                 android:background="@drawable/voi"
                 android:gravity="center">
 
-            </ImageView>
+            </ImageButton>
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
