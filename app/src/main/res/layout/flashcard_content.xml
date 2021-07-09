@@ -37,11 +37,11 @@
             android:layout_weight="1">
 
             <ImageView
+                android:id="@+id/text_to_speech_btn"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:background="@drawable/voi"
-                android:id="@+id/text_to_speech_btn"
                 android:gravity="center">
 
             </ImageView>
