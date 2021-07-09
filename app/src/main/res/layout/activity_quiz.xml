@@ -104,9 +104,9 @@
                 android:background="#FF6666"
                 android:gravity="center"
                 android:padding="15dp"
+                android:text="OptionFour"
                 android:textColor="@color/black"
-                android:textSize="18sp"
-                android:text="OptionFour"/>
+                android:textSize="18sp" />
 
         </LinearLayout>
         <LinearLayout

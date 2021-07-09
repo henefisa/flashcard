@@ -43,7 +43,8 @@
                 android:textColor="#992970"
                 android:textSize="20dp" />
 
-            <ImageView
+            <ImageButton
+                android:id="@+id/speak"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_vertical"

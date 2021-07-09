@@ -32,7 +32,7 @@ class MyWordActivity : AppCompatActivity() {
         db.collection("Favorites").document(id).get().addOnSuccessListener { docs ->
             if (docs.exists()) {
                 val words = ArrayList<Word>()
-                val myWordAdapter = MyWordAdapter(words)
+                val myWordAdapter = MyWordAdapter(words, this)
                 val ws = docs.data?.get("words")
                 if (ws != null && (ws as ArrayList<String>).size !== 0) {
                     for (w in ws as ArrayList<String>) {
