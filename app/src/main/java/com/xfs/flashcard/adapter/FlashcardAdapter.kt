@@ -3,12 +3,15 @@ package com.xfs.flashcard.adapter
 import android.animation.AnimatorInflater
 import android.animation.AnimatorSet
 import android.content.Context
+import android.os.Bundle
 import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
@@ -105,10 +108,30 @@ class FlashcardAdapter(w: ArrayList<Word>) : RecyclerView.Adapter<FlashcardHolde
             }
 
         }
+
     }
+
 
     override fun getItemCount(): Int {
         return words.size
     }
+//    override fun onCreate(savedInstanceState: Bundle?): AppCompatActivity {
+//        super.onCreate(savedInstanceState)
+//        setContentView(R.layout.flashcard_content)
+//
+//        // get reference to ImageView
+//        val text_to_speech_btn = findViewById(R.id.text_to_speech_btn) as ImageView
+//        // set on-click listener
+//        text_to_speech_btn.setOnClickListener {
+//            // your code to perform when the user clicks on the ImageView
+//            Toast.makeText(this@FlashcardAdapter, "You clicked on ImageView.", Toast.LENGTH_SHORT).show()
+//        }
+//    }
+
+
 
 }
+
+
+
+
