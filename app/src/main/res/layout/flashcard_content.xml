@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/flashcard_drawable_background"
+>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="15dp"
-        android:background="#FFF"
-        android:orientation="vertical">
+        android:orientation="vertical"
+    >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,8 +28,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Word"
-                    android:textColor="#CC0A0A"
-                    android:textSize="30dp" />
+                    android:textColor="#fff"
+                    android:textSize="30dp"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -36,16 +38,16 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="center">
-
-
-
             <ImageButton
                 android:id="@+id/text_to_speech_btn"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:background="@drawable/voi"
-                android:gravity="center">
+                android:gravity="center"
+                android:tint="#fff"
+                android:tintMode="src_in"
+            >
 
             </ImageButton>
         </LinearLayout>
@@ -55,31 +57,35 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
-            android:clickable="true">
+            android:clickable="true"
+            android:padding="20dp"
+        >
 
             <LinearLayout
                 android:id="@+id/flashcard_front"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+            >
 
                 <ImageView
                     android:id="@+id/word_image"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                />
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/flashcard_back"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="40dp"
                 android:background="@drawable/bdlayout"
                 android:orientation="vertical"
-                android:padding="10dp"
                 app:layout_constraintBottom_toTopOf="@+id/flashcard_front_back"
                 app:layout_constraintEnd_toStartOf="@+id/flashcard_front_back"
                 app:layout_constraintStart_toEndOf="@+id/flashcard_front_back"
@@ -93,9 +99,9 @@
                     android:text="handleAbc"
                     android:textAlignment="center"
                     android:textColor="#0ACC0A"
-                    android:textSize="28dp">
+                    android:textSize="28dp"
+                />
 
-                </TextView>
 
                 <TextView
                     android:id="@+id/spell"
@@ -104,9 +110,9 @@
                     android:padding="15dp"
                     android:text="handleAbc"
                     android:textColor="#992970"
-                    android:textSize="26dp">
-
-                </TextView>
+                    android:textSize="26dp"
+                    android:gravity="center"
+                />
 
                 <ListView
                     android:id="@+id/word_example_list"
@@ -114,7 +120,7 @@
                     android:layout_height="wrap_content"
 
 
-                    />
+                />
 
 
             </LinearLayout>
@@ -127,7 +133,7 @@
             android:layout_height="wrap_content"
             android:padding="15dp"
             android:textSize="24dp"
-            android:text="Add to my word" />
+            android:text="Add to my word"/>
     </LinearLayout>
 
 

@@ -106,7 +106,7 @@ class FlashcardAdapter(w: ArrayList<Word>, a: Activity) : RecyclerView.Adapter<F
                             )
                         )
                     }
-                    Toast.makeText(context, "Words added to my words!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Word added to my words!", Toast.LENGTH_SHORT).show()
                 }
             }
 

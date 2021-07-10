@@ -30,11 +30,6 @@ class HomepageActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homepage)
         database = FirebaseFirestore.getInstance()
-        toolbar = findViewById(R.id.toolbar)
-        listSubj = findViewById<ListView>(R.id.list)
-        lvHomepage = findViewById<ListView>(R.id.lvHomepage)
-        navigationView = findViewById(R.id.navigationview)
-        drawerLayout = findViewById(R.id.drawerlayout)
         val MenuArrayList = ArrayList<Menu>()
         MenuArrayList.add(Menu("Home", R.drawable.ic_home))
         MenuArrayList.add(Menu("My words", R.drawable.ic_round_work_24))
@@ -48,7 +43,8 @@ class HomepageActivity : AppCompatActivity() {
         lvHomepage = findViewById(R.id.lvHomepage)
         navigationView = findViewById(R.id.navigationview)
         drawerLayout = findViewById(R.id.drawerlayout)
-
+        listSubj.divider = null
+        listSubj.selector = resources.getDrawable(R.drawable.transparent_drawable)
         val adapterMenu = MenuAdapter(MenuArrayList)
         lvHomepage.adapter = adapterMenu
 

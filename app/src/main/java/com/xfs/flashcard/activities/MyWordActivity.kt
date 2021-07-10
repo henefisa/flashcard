@@ -54,6 +54,7 @@ class MyWordActivity : AppCompatActivity() {
                     }
                     myWordListView = findViewById(R.id.my_words_list)
                     myWordListView.adapter = myWordAdapter
+                    myWordListView.divider = null
                 } else {
                     Toast.makeText(this, "Your words is empty!", Toast.LENGTH_SHORT).show()
                     emptyLayout = findViewById(R.id.empty_layout)
