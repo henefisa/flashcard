@@ -28,13 +28,8 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_quiz)
         database = FirebaseFirestore.getInstance()
 
-        val que1 = Question("2","What is this?","https://www.lushusa.com/dw/image/v2/BDMQ_PRD/on/demandware.static/-/Library-Sites-LushSharedLibrary/default/dwf97cb700/images/ingredients/10424.jpg?sw=250&sh=250&sm=fit",
-            "mango","banana","orange","grape",3)
-        questionList.add(que1)
-
         getQuestion()
 
-        setQuiz()
         tv_optionOne.setOnClickListener(this)
         tv_optionTwo.setOnClickListener(this)
         tv_optionThree.setOnClickListener(this)
@@ -60,6 +55,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                     )
 
                 }
+                setQuiz()
             }
         }
     }
