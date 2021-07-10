@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,21 +21,23 @@
                 android:layout_height="match_parent">
 
                 <TextView
+                    android:id="@+id/word"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="Word"
                     android:textColor="#CC0A0A"
-                    android:id="@+id/word"
-                    android:textSize="30dp"/>
+                    android:textSize="30dp" />
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:gravity="center"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:gravity="center">
+
+
 
             <ImageButton
                 android:id="@+id/text_to_speech_btn"
@@ -48,19 +51,25 @@
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/flashcard_front_back"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5"
-            android:id="@+id/flashcard_front_back"
-            android:clickable="true"
-        >
-            <LinearLayout android:id="@+id/flashcard_front" android:layout_width="match_parent"
-                          android:layout_height="match_parent">
-                <ImageView android:layout_width="match_parent"
-                           android:id="@+id/word_image"
-                           android:layout_height="match_parent" app:layout_constraintBottom_toBottomOf="parent"
-                           app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-                           app:layout_constraintTop_toTopOf="parent"/>
+            android:clickable="true">
+
+            <LinearLayout
+                android:id="@+id/flashcard_front"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/word_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
 
             <LinearLayout
@@ -99,18 +108,26 @@
 
                 </TextView>
 
-                <ListView android:id="@+id/word_example_list" android:layout_width="match_parent"
-                          android:layout_height="wrap_content"
+                <ListView
+                    android:id="@+id/word_example_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
 
 
-                />
+                    />
 
 
             </LinearLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:text="Add to my word" android:id="@+id/add_to_my_word"/>
+
+        <Button
+            android:id="@+id/add_to_my_word"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:textSize="24dp"
+            android:text="Add to my word" />
     </LinearLayout>
 
 
