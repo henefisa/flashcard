@@ -19,7 +19,7 @@
                 app:title="Flashcard"
                 android:id="@+id/toolbar"
                 android:layout_height="?attr/actionBarSize"
-                android:background="#fff"
+                android:background="@color/white"
             >
             </androidx.appcompat.widget.Toolbar>
             <LinearLayout

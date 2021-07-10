@@ -60,7 +60,8 @@
             android:gravity="center_vertical"
             android:paddingBottom="5dp"
             android:text="Meaning"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textColor="#363A43"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,7 +75,8 @@
                 android:gravity="center_vertical"
                 android:paddingBottom="5dp"
                 android:text="Example"
-                android:textSize="20dp" />
+                android:textSize="20dp"
+                android:textColor="#363A43"/>
 
             <ImageButton
                 android:id="@+id/delete_btn"
