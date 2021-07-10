@@ -24,7 +24,8 @@
             android:layout_height="120dp"
             android:id="@+id/nameSubj"
             android:text="Subject"
-            android:textSize="20dp"/>
+            android:textSize="20dp"
+            android:textColor="#363A43"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -91,6 +91,7 @@ class SettingsActivity : AppCompatActivity() {
             val breakTimerPreference = findPreference<ListPreference>("break_time")
             breakTimerPreference?.setOnPreferenceChangeListener { preference, newValue ->
                 if (preference is ListPreference) {
+                    (activity as SettingsActivity?)?.createNotification()
                     val index = preference.findIndexOfValue(newValue.toString())
                     val entry = preference.entries.get(index)
                     val valueEntry = entry.toString()
