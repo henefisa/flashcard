@@ -55,6 +55,7 @@ class QuizActivity : AppCompatActivity(), View.OnClickListener {
                     )
 
                 }
+                questionList.shuffle()
                 setQuiz()
             }
         }
